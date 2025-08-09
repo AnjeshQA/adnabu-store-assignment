@@ -27,17 +27,19 @@ chrome_options.add_argument("--start-maximized")  # Open in maximized window
 service = Service("/usr/local/bin/chromedriver")  # Update with the correct ChromeDriver path
 driver = webdriver.Chrome(service=service, options=chrome_options)
 
-
 driver.get("https://www.neetprep.com/login")
 
-# Enter the mobile number
-WebDriverWait(driver, 10).until(
-    EC.presence_of_element_located((By.ID, "number"))
-).send_keys("8882113808")
+# Wait for the element with ID 'name' to be visible and enter the mobile number
+# print("Waiting for the element with ID 'name' to be visible...")
+# WebDriverWait(driver, 20).until(
+#     EC.visibility_of_element_located((By.ID, "name"))
+# )
+#driver.find_element(By.ID, "name")
+driver.find_element(By.XPATH, "//input[@id='number']").send_keys("9000000000")
 
 # Click the OTP button
 WebDriverWait(driver, 10).until(
-    EC.element_to_be_clickable((By.XPATH, "//a[@id='otp_button']"))
+    EC.element_to_be_clickable((By.XPATH, "//button[@id='otp_button']"))
 ).click()
 
 time.sleep(3)
@@ -46,15 +48,18 @@ time.sleep(3)
 password = get_password_from_file()
 
 # Wait for the password field to appear and enter the password
+print("Waiting for the password field...")
 password_field = WebDriverWait(driver, 10).until(
-    EC.presence_of_element_located((By.XPATH, "(//input[@placeholder='Password'])[2]"))
+    EC.visibility_of_element_located((By.ID, "code"))
 )
 print(f"Entering password: '{password}'")  # Debugging
 password_field.send_keys(password)
 
+time.sleep(3)
+
 # Submit the login
 WebDriverWait(driver, 10).until(
-    EC.element_to_be_clickable((By.XPATH, "//a[@id='otp_button']"))
-   ).click()
+    EC.element_to_be_clickable((By.XPATH, "//span[@id='buttonText']"))
+).click()
 
-time.sleep(2)
+time.sleep(200)
