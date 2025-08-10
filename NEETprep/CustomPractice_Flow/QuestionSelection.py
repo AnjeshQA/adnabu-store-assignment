@@ -62,11 +62,11 @@ def execute_test_flow():
 
         driver.find_element(By.XPATH, "//button[normalize-space()='Continue']").click()
 
-        time.sleep(2)
+        time.sleep(4)
 
         driver.find_element(By.XPATH, "//p[normalize-space()='Difficulty Level']").click()
 
-        time.sleep(1)
+        time.sleep(5)
 
         driver.find_element(By.XPATH, "//input[@id='Easy']").click()
 
