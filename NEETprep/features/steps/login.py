@@ -77,7 +77,7 @@ def step_impl(context):
     # )
     print("Inside - NEETprep home page displayed")
 
-    time.sleep(300)
+    time.sleep(200)
 
 
 
