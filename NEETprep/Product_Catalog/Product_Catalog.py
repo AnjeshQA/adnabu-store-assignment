@@ -13,3 +13,5 @@ class Product_Catalog():
     def buy_new_courses(self):
         driver.get("https://dev.neetprep.com/newui/OffersDisplay")
         time.sleep(10)
+
+        driver.find_element(By,)
