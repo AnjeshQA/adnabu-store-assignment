@@ -50,7 +50,7 @@ def step_impl(context):
     print(f"Entering OTP: '{otp}'")  # Debugging
     otp_field.send_keys(otp)
 
-    time.sleep(3)
+    time.sleep(5)
     print("Inside - entered OTP")
 
 
