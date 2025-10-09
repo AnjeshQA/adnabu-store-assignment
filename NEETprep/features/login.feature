@@ -3,6 +3,7 @@ Feature: NEETprep Login
   I want to login using my mobile number and OTP
   So that I can access the NEETprep home page
 
+  @implemented
   Scenario: Successful login with valid mobile number and Valid OTP
     Given I am on the NEETprep login page
     When I enter my mobile number

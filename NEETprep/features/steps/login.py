@@ -91,9 +91,9 @@ def step_impl(context):
     print("Inside - Proper Error Message displayed due to invalid OTP")
 
 
-@given(u'I am on the NEETprrp Login page')
+@given(u'I am on the NEETprrp NewLogin page')
 def step_impl(context):
-    print("Inside - NEETprrp Login page")
+    print("Inside - NEETprrp NewLogin page")
 
 
 @when(u'I click the Send OTP buttion')
