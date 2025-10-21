@@ -9,6 +9,8 @@ class Login:
         self.verify_otp_button_Xpath = "//button[@id='otp_button']"
         self.invalid_otp_error_message_Xpath = "//div[@class='alert api-alert text-center font-weight-bold alert-danger']"
         self.homepage_Xpath = "//div[normalize-space()='Practice Session']"
+        self.check_in_counter_Xpath = "//a[@class='wzrkClose']"
+
 
 
     def enter_mobile_no(self, mobileNo):
@@ -28,3 +30,6 @@ class Login:
 
     def homepage(self):
         return self.driver.find_element(By.XPATH,self.homepage_Xpath).text
+
+    def checkin(self):
+        self.driver.find_element(By.XPATH, self.check_in_counter_Xpath).click()
