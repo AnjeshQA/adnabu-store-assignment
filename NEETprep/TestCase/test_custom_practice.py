@@ -1,5 +1,4 @@
 from time import sleep
-
 import pytest
 from NEETprep.PageObject.Custom_Practice_Page import CustomTest
 from NEETprep.PageObject.Login_Page import Login
@@ -11,7 +10,7 @@ class TestCustom:
 
     def test_CT_001(self):
         # Set implicit wait for the driver (e.g., 10 seconds)
-        self.driver.implicitly_wait(20)
+        self.driver.implicitly_wait(30)
 
         lg = Login(self.driver)
         ct = CustomTest(self.driver)
@@ -23,20 +22,14 @@ class TestCustom:
         lg.verify_otp()
         #lg.checkin()
 
-        sleep(5)
         # Custom test steps
         ct.click_custom_test_button()
-        sleep(2)
         ct.close_resume_test_popup()
-        sleep(2)
         ct.select_chapter()
-        sleep(2)
         ct.continue_button()
         sleep(2)
         ct.continue_button()
-        sleep(2)
         ct.print_pdf()
-        sleep(3)
 
         # Verification
         if "Fill OMR Sheet*" in ct.pdf_generate():

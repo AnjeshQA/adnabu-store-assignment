@@ -1,4 +1,8 @@
+
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 
 class CustomTest:
     def __init__(self, driver):
@@ -13,25 +17,42 @@ class CustomTest:
         self.select_a_chapter_Xpath = "//input[@id='c675']"
         self.continue_button_ct_Xpath = "//button[text()='Continue']"
         self.print_pdf_ct_Xpath = "//button[text()='Print PDF']"
-        self.pdf_generated_Xpath = "//div[normalize-space()='Fill OMR Sheet*']"
+        self.pdf_generated_assert_Xpath = "//div[normalize-space()='Fill OMR Sheet*']"
+
+    # def click_custom_test_button(self):
+    #     self.driver.find_element(By.XPATH, self.click_custom_practice_session_Xpath).click()
 
     def click_custom_test_button(self):
-        self.driver.find_element(By.XPATH, self.click_custom_practice_session_Xpath).click()
+        WebDriverWait(self.driver, 30).until(
+            EC.element_to_be_clickable((By.XPATH, self.click_custom_practice_session_Xpath))
+        ).click()
 
     def close_resume_test_popup(self):
-        self.driver.find_element(By.XPATH, self.close_unfinish_test_popup_xpath).click()
+        WebDriverWait(self.driver, 30).until(
+            EC.element_to_be_clickable((By.XPATH, self.close_unfinish_test_popup_xpath))
+        ).click()
 
     def select_chapter(self):
-        self.driver.find_element(By.XPATH, self.select_a_chapter_Xpath).click()
+        WebDriverWait(self.driver, 30).until(
+            EC.element_to_be_clickable((By.XPATH, self.select_a_chapter_Xpath))
+        ).click()
 
     def continue_button(self):
-        self.driver.find_element(By.XPATH, self.continue_button_ct_Xpath).click()
+        WebDriverWait(self.driver, 30).until(
+            EC.element_to_be_clickable((By.XPATH, self.continue_button_ct_Xpath))
+        ).click()
 
     def print_pdf(self):
-        self.driver.find_element(By.XPATH, self.print_pdf_ct_Xpath).click()
-
+        WebDriverWait(self.driver, 30).until(
+            EC.element_to_be_clickable((By.XPATH, self.print_pdf_ct_Xpath))
+        ).click()
+    # assertion to check pdf generated or not
     def pdf_generate(self):
-        return self.driver.find_element(By.XPATH, self.pdf_generated_Xpath).text
+        # Ensure we wait for the element to be clickable and then get its text
+        element = WebDriverWait(self.driver, 30).until(
+            EC.element_to_be_clickable((By.XPATH, self.pdf_generated_assert_Xpath))
+        )
+        return element.text  # Return the text of the element
 
     #or pdf text alternative
 
