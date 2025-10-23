@@ -18,6 +18,12 @@ class CustomTest:
         self.continue_button_ct_Xpath = "//button[text()='Continue']"
         self.print_pdf_ct_Xpath = "//button[text()='Print PDF']"
         self.pdf_generated_assert_Xpath = "//div[normalize-space()='Fill OMR Sheet*']"
+        self.start_test_button_Xpath = "//button[@class='w-full transition-colors text-white py-3.5 px-5 rounded-[10px] text-base font-semibold cursor-pointer bg-primary hover:bg-primary-dark']"
+        self.select_correct_options_Xpath = "//button[@id='option-2']"
+        self.go_to_next_question_Xpath = "(//*[name()='path'])[13]"
+        self.submit_test_Xpath = "(//button[normalize-space()='Yes'])[1]"
+        self.go_to_test_analytics_page_Xpath = "//button[text()='Continue your journey']"
+        self.go_to_home_page_Xpath = "//button[text()='Go Home']"
 
     # def click_custom_test_button(self):
     #     self.driver.find_element(By.XPATH, self.click_custom_practice_session_Xpath).click()
@@ -59,5 +65,37 @@ class CustomTest:
     # def pdf_generate(self):
     #     element = self.driver.find_element(By.XPATH, self.pdf_generated_Xpath)
     #     return element.text
+
+    def start_test(self):
+        WebDriverWait(self.driver,30).until(
+            EC.element_to_be_clickable((By.XPATH,self.start_test_button_Xpath))
+        ).click()
+
+    def select_option(self):
+        WebDriverWait(self.driver,30).until(
+            EC.element_to_be_clickable((By.XPATH,self.select_correct_options_Xpath))
+        ).click()
+
+    def go_next(self):
+        WebDriverWait(self.driver, 30).until(
+            EC.element_to_be_clickable((By.XPATH, self.go_to_next_question_Xpath))
+        ).click()
+
+    def submit_test(self):
+        WebDriverWait(self.driver, 30).until(
+            EC.element_to_be_clickable((By.XPATH, self.submit_test_Xpath))
+        ).click()
+
+    def go_to_analytics(self):
+        WebDriverWait(self.driver, 30).until(
+            EC.element_to_be_clickable((By.XPATH, self.go_to_test_analytics_page_Xpath))
+        ).click()
+
+    def go_home(self):
+        WebDriverWait(self.driver, 30).until(
+            EC.element_to_be_clickable((By.XPATH, self.go_to_home_page_Xpath))
+        ).click()
+
+
 
 
