@@ -11,8 +11,6 @@ def verify_page_load(driver):
     shop_url = configReader.readConfig("common info", "shop_url")
     driver.get(shop_url)
     # Give the Shop's dynamic header 2 seconds to stabilize
-    import time
-    time.sleep(2)
     assert "shop.neetprep.com" in driver.current_url
 
 

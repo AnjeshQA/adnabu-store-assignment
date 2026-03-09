@@ -7,3 +7,12 @@ Logs/
 .Logs/
 allure-results/
 Reports/
+.idea/
+.venv/
+.DS_Store
+__pycache__/
+*.csv
+Logs/
+.Logs/
+*.xlxs
+.xls
