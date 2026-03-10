@@ -61,3 +61,15 @@ Pages/: Page Object classes containing Selenium element interactions.
 Utilities/: Configuration readers and the config.ini file.
 
 requirements.txt: List of all necessary Python libraries.
+
+
+## 🧪 BDD Implementation Details
+The project follows the standard Gherkin-Pytest-BDD workflow:
+
+1. **Feature Files (`AddToCartAssessment/Features/`):** - Written in plain English using `Given`, `When`, `And`, and `Then` keywords.
+   - Defines the business logic of navigating the store, searching for "Adnabu Team", and completing the checkout.
+
+2. **Step Definitions (`AddToCartAssessment/TestCases/`):** - Acts as the "Glue Code" between the feature files and the automation logic.
+   - Uses `@scenario` decorators to link specific Gherkin steps to Python functions.
+
+3. **Page Objects (`Pages/`):** - All Selenium interactions (clicks, text input, waits) are abstracted here to keep the test steps clean and readable.
