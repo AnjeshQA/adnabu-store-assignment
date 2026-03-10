@@ -93,3 +93,8 @@ class BasePage:
             # If element is not found or not visible, return False instead of crashing
             log.logger.error(f"Element {locator} is not displayed on the page.")
             return False
+
+    def click_element_manual(self, custom_xpath):
+        # This ignores the .ini file and clicks exactly what you give it
+        element = self.wait.until(EC.element_to_be_clickable((By.XPATH, custom_xpath)))
+        element.click()

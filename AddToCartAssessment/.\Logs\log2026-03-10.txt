@@ -1,0 +1,8 @@
+2026-03-10 11:33:47,565 - BasePage.py:[60] - [INFO] - Step: Clicking on Element -> clickSearchIcon_CSS
+2026-03-10 11:34:08,091 - BasePage.py:[48] - [ERROR] - FAIL: Element 'clickSearchIcon_CSS' not visible at: .modal__toggle-open.icon.icon-search
+2026-03-10 11:53:22,870 - BasePage.py:[53] - [INFO] - Step: Typing 'AdNabuQA' into -> passwordTextBox_ID
+2026-03-10 11:53:23,198 - BasePage.py:[60] - [INFO] - Step: Clicking on Element -> submitPasswordButton_XPATH
+2026-03-10 11:53:24,348 - BasePage.py:[60] - [INFO] - Step: Clicking on Element -> clickSearchIcon_CSS
+2026-03-10 11:53:25,037 - BasePage.py:[53] - [INFO] - Step: Typing 'The Videographer Snowboard' into -> inputSearchBox_XPATH
+2026-03-10 11:53:27,998 - BasePage.py:[60] - [INFO] - Step: Clicking on Element -> addToCartButton_XPATH
+2026-03-10 11:53:28,097 - BasePage.py:[60] - [INFO] - Step: Clicking on Element -> checkout_XPATH

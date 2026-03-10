@@ -1,0 +1,6 @@
+# Treat these as generated files, not source code
+allure-report/** linguist-vendored
+allure-results/** linguist-vendored
+*.json linguist-documentation
+*.html linguist-documentation
+*.csv linguist-documentation

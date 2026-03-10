@@ -33,3 +33,6 @@ Logs/
 .env
 Utilities/config.ini.local
 NEETprep_Web_Test_Automation/
+
+**/allure-report/
+**/allure-results/

@@ -1,8 +1,8 @@
-Feature: shop.NEETprep product add to cart Functionality
+Feature: Adnabu Store Cart Management
 
-  Scenario: Search for a product and add it to the cart successfully
-    Given I am on the shop.NEETprep homepage
-    When I search for "HYTS HOME TEST SERIES LATEST EDITION" NEETprep product
-    And I select the product from the search results
-    And I click on "Add to Cart" Button
-    Then the product should be added to the cart successfully
+  Scenario: After Login user Search a product & Successfully adding a product to the cart
+    Given User successfully logged in to the Adnabu store
+    And I am on the store homepage
+    When I search for the configured product
+    And I add the product to my cart
+    Then I should see the product in the checkout summary
