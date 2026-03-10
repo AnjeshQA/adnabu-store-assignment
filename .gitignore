@@ -32,3 +32,4 @@ Logs/
 # --- Local Secrets ---
 .env
 Utilities/config.ini.local
+NEETprep_Web_Test_Automation/
